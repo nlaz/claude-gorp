@@ -1,0 +1,14 @@
+{
+  "name": "claude-gorp",
+  "owner": { "name": "Niko Lazaris", "url": "https://github.com/nlaz" },
+  "metadata": {
+    "description": "gorp — ranked semantic code search for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "claude-gorp",
+      "source": "./",
+      "description": "Ranked semantic code search for Claude Code, powered by gorp."
+    }
+  ]
+}

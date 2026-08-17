@@ -1,0 +1,11 @@
+{
+  "name": "claude-gorp",
+  "displayName": "gorp — semantic code search",
+  "version": "0.1.0",
+  "description": "Ranked semantic code search for Claude Code. Installs the gorp binary and teaches Claude to search by meaning, not just by regex.",
+  "author": { "name": "Niko Lazaris", "url": "https://github.com/nlaz" },
+  "repository": "https://github.com/nlaz/claude-gorp",
+  "homepage": "https://github.com/nlaz/gorp",
+  "license": "MIT",
+  "keywords": ["search", "semantic-search", "code-search", "gorp"]
+}
