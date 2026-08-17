@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": ["${CLAUDE_PLUGIN_ROOT}/scripts/ensure-gorp.sh", "${CLAUDE_PLUGIN_DATA}"],
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/scripts/ensure-gorp.sh\" \"${CLAUDE_PLUGIN_DATA}\"",
             "timeout": 90,
             "statusMessage": "Checking gorp binary"
           }
