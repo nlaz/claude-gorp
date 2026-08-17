@@ -28,11 +28,7 @@ isn't on PATH.
 
 - `-k N` — return N results (default 5; bare `-k` means 20)
 - positional paths — `gorp "query" src/ lib/` limits the scope
-- `-g GLOB` — keep only matching paths, repeatable (`-g '*.py'`). A single
-  `*` does not cross `/`: scope to a directory with `-g 'src/**'`, or more
-  simply pass the directory as a path argument
-- with a path argument, printed paths are relative to that scope root, not
-  to the current directory
+- `-g GLOB` — keep only matching paths, repeatable (`-g '*.py'`)
 - `-l` — matching paths only, in rank order
 - `--lines A-B` — keep only results in a line range
 - `-M N` — truncate printed lines at N characters (default 200)
