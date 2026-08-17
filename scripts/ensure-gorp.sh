@@ -37,10 +37,13 @@ EOF
   fi
 }
 
-# The block after the first two sentences is measured wording from gorp's
-# README (it moved an agent's ranked-search share from 7% to 98%) — keep it
-# byte-identical. Only the opening clause is adapted, because in Claude Code
-# gorp is not literally the only search tool.
+# The block after the first two sentences is measured wording: gorp-bench's
+# desc-v11 clause set (wide-by-default plus the routed exact-match escape
+# hatch), which survived its registered kill condition — agents kept 81% of
+# calls ranked and used -e only for the verification job it names. Keep it
+# byte-identical apart from the sg→gorp rename (itself the validated pure
+# rename arm, desc-v12). Only the opening clause is adapted, because in
+# Claude Code gorp is not literally the only search tool.
 emit_prompt() {
   cat <<EOF
 gorp is installed at $WRAPPER; every \`gorp\` below means that command.
@@ -50,7 +53,12 @@ finding code. It is a ranked code search you run with Bash. Give it anything
 — an identifier, a phrase, or a question: \`gorp "query"\` searches the whole
 repository and returns the most relevant locations as path:line:text (top 5;
 \`-k N\` for more). Start wide: add a path argument only to narrow further
-after a wide search has pointed somewhere. Example: gorp "retry_backoff
+after a wide search has pointed somewhere. When you are unsure of a name,
+list several candidate spellings in one query rather than a regex. When you
+already know the exact string — a name you have seen in the code, an error
+message — \`gorp -e "the_exact_string"\` returns every literal match,
+grep-style. Default to ranked search; use -e only to verify or count
+something you have already seen spelled out. Example: gorp "retry_backoff
 backoff_delay compute_delay" → src/net/retry.rs:142:fn backoff_delay(attempt:
 u32). Ranked, not exhaustive — if the answer isn't there, rephrase.
 EOF

@@ -57,15 +57,19 @@ On anything else (Windows included) the plugin no-ops cleanly.
 
 ## A note on the prompt wording
 
-gorp's README ships a system-prompt block whose wording is measured — one
-clause moved an agent's ranked-search share from 7% to 98%. This plugin
-injects that block with only the opening clause adapted (the original says
-gorp is the *only* search tool, which isn't true inside Claude Code, where
-Grep and Glob exist). Everything from "Give it anything…" on is
-byte-identical. If you want to re-verify the adapted wording, gorp's
-`GORP_TRACE_FILE` telemetry plus the
-[gorp-bench](https://github.com/nlaz/gorp-bench) harness measure
-ranked-search share directly.
+The injected block's wording is measured, not decorative — one clause in
+gorp's README variant moved an agent's ranked-search share from 7% to 98%.
+This plugin ships the latest measured clause set from the
+[gorp-bench](https://github.com/nlaz/gorp-bench) description ladder
+(desc-v11: wide-by-default search, candidate-spellings-over-regex, and a
+*routed* exact-match escape hatch — the variant whose registered tripwire
+did not fire: agents kept 81% of calls ranked and used `-e` only to verify
+names they had already seen). Only two things differ from the measured
+line: the `sg`→`gorp` rename (itself validated as a pure rename arm) and
+the opening clause, adapted because the measured "only code search tool
+available" is false inside Claude Code, where Grep and Glob exist. To
+re-verify, gorp's `GORP_TRACE_FILE` telemetry plus the gorp-bench harness
+measure ranked-search share directly.
 
 ## Updating and uninstalling
 
