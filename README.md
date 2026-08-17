@@ -57,17 +57,16 @@ On anything else (Windows included) the plugin no-ops cleanly.
 
 ## A note on the prompt wording
 
-The injected block's wording is measured, not decorative — one clause in
-gorp's README variant moved an agent's ranked-search share from 7% to 98%.
-This plugin ships the latest measured clause set from the
-[gorp-bench](https://github.com/nlaz/gorp-bench) description ladder
-(desc-v11: wide-by-default search, candidate-spellings-over-regex, and a
-*routed* exact-match escape hatch — the variant whose registered tripwire
-did not fire: agents kept 81% of calls ranked and used `-e` only to verify
-names they had already seen). Only two things differ from the measured
-line: the `sg`→`gorp` rename (itself validated as a pure rename arm) and
-the opening clause, adapted because the measured "only code search tool
-available" is false inside Claude Code, where Grep and Glob exist. To
+The injected block's wording is measured, not decorative. It is the
+[gorp-bench](https://github.com/nlaz/gorp-bench) harness's `SG_LINE_V11` —
+the description measured in the *additive* regime, where Grep and other
+tools stay available, exactly this plugin's situation. Its clause set is
+wide-by-default search, candidate-spellings-over-regex, and a *routed*
+exact-match escape hatch — the variant whose registered tripwire did not
+fire: agents kept 81% of calls ranked and used `-e` only to verify names
+they had already seen. The only difference from the measured line is the
+`sg`→`gorp` rename, itself validated as a pure rename arm. The plugin
+never takes Grep away; gorp earns its share on wording alone. To
 re-verify, gorp's `GORP_TRACE_FILE` telemetry plus the gorp-bench harness
 measure ranked-search share directly.
 
